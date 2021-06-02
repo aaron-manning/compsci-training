@@ -64,5 +64,3 @@ Q29: What are the financial implications of using open source software vs propri
 Q30: Why would you want to avoid vendor lock-in at an operational level?
 Q31: What is PCIE and NVME? What are storage IOPS? Explain the pros and cons of using NVME SSD's for production servers.
 Q32: Explain the typical difference between standard type and archive type cloud storage? What technology is typically used for archival storage? What are the pros/cons for utilising archival storage?
-
-We are now finished with Hyper-V, you may shut down your VM and/or uninstall Hyper-V and remove your VM files.
