@@ -10,5 +10,5 @@ Answering questions
     create a text file with your answers to any questions for this lesson
       use the following file format: lesson_number.your_git_name.txt
       eg 1.captainkirk.txt
-    answer questions in your local repository as you go through the lesson.
-    once you have completed all tasks, submit a pull request. (https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
+    answer questions in your local repository as you go through each lesson.
+    once you have completed all tasks for a lesson, submit a pull request. (https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
