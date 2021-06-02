@@ -27,7 +27,7 @@ Once connected, open the integrated VSCode terminal and clone your fork of this 
 Use the VSCode File menu to 'open folder' at your cloned repository. You should now have complete access to the remote filesystem of your VM in the 'explorer' left hand menu of VSCode.
 
 Q3: What is SCP over SSH and why is using VSCode remote SSH convenient for managing remote instances?
-Q4: What is a git repository? What happens during a git clone? What do the terms 'remote' and 'origin' typically mean?
+Q4: What is a git repository? What happens during a git clone? What do the terms 'remote' and 'origin' mean in this context?
 Q5: What is the benefit of forking a repository and submitting pull requests vs sharing repository access and pushing directly to master?
 Q6: Why are git branches useful? how would you organise a repository to best use branches?
 
