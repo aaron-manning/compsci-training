@@ -1,5 +1,5 @@
 cpu architecture
-  cache
+  l1/l2/l3 cache
   x86 x64 arm
 git
   advanced techniques
@@ -25,7 +25,6 @@ devops
     http2
     websocket?
     unix sockets
-      postgres
   docker
   nginx
 software architecture
