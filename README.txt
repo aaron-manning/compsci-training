@@ -14,7 +14,7 @@ Answer the questions
     answer questions in your local repository as you go through each lesson.
     once you have completed all tasks for a lesson, submit a pull request. (https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github)
 
-Course content:
+Course content (TBC, in no particular order):
 
 cpu architecture
   l1/l2/l3 cache
