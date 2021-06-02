@@ -1,0 +1,45 @@
+cpu architecture
+  cache
+  x86 x64 arm
+git
+  advanced techniques
+    sub repositories
+    sub modules
+    git reset
+programming skills
+  .net
+  javascript/typescript
+  reactive frameworks?
+  html?
+  css?
+devops
+  networking
+    dns
+      dns record types
+      cloudflare
+    ipv4
+    ipv6
+    tcp
+    udp
+    http
+    http2
+    websocket?
+    unix sockets
+      postgres
+  docker
+  nginx
+software architecture
+  REST
+  RPC?
+  Graphql?
+  testing methodologies
+project management?
+  waterfall?
+  agile?
+database
+  sql
+    postgres
+    mysql/mariadb
+  nosql
+  flat file
+  SAAS
