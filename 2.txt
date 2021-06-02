@@ -38,8 +38,6 @@ Experiment with hyper-v by doing the following in any order:
   Forcefully terminate your VM.
   Export your VM, remove it from hyper-V and then re-import it.
 
-After doing the above, if you have managed to break your VM, you may have lost the progress on your answers to the above questions, which you may have been writing from within your VM. This is an important lesson.
-
 Q7: Why is it important to frequently commit and push your changes to a remote repository (eg your forked repo on GitHub)?
 Q8: Why are VM snapshots important?
 Q9: When and why would you choose to use incremental backups vs full backups? 
