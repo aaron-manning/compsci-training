@@ -50,3 +50,57 @@ Frequent commit and push will safeguard your work against loss of data if the or
 a problem elsewhere or breaks something is easily identifiable, committing a lot of work at once increases the chance of a conflict with code that is submitted and will make it harder to
 troubleshoot an error should one arise.
 
+Q8: Why are VM snapshots important?
+
+VM Snapshots when done regularly will allow you to restore a VM to a state much closer to that which it was before an error or failure occurs, saving lots of time and effort in lost work
+Ultimately saving the state of the machine like this is similar to regularly saving your work, if it goes down and you have to restore it, you will have lost less if you snapshot regularly
+restoring it to a state before it experienced a problem.
+
+Q9: When and why would you choose to use incremental backups vs full backups? 
+
+Incremental backups are especially useful when backing up large amounts of data or data that changes infrequently, by having the backup only transfer that which has changed since the
+previous backup, you can save a lot of network traffic, data transfer costs.
+
+Q10: What port is SSH usually exposed on? What are the security implications of having this port exposed to the internet? Is it worthwhile changing the port?
+
+SSH is exposed on port 22 by default, the security implications are that an attacker would know where to look for the port making a connection atttempt, changing the port would likely make
+the default operation of a lot of programs function incorrectly without additional configuration, such as any SSH connection would need to be told explicitly which port is listening for the SSH commands.
+
+I would guess a determined attacker would scan all ports on a location for the port that responds to an SSH request if thats what they were looking for and perhaps the obfuscation of the SSH port would Ultimately
+prove pointless because of this? Ultimately you might end up with less risk because bots set to attempt port 22 would miss it but ultimately if its configured correctly such an attack would be futile.
+
+Q11: What could happen if your SSH key is compromised?
+
+If your private SSH key is compromised, then forward secrecy should only allow that existing session to be compromised, and may allow someone to access the server, but not the remote.
+
+Q12: What are the security implications of using software that is no longer supported or has not been updated?
+
+New threats that are discovered and detected wont get patched for software that is unsupported or not been updated, making potentially fatal holes and exposing your system.
+
+Q13: Explain these software terms: LTS, Stable, Alpha, Beta, RC
+
+LTS - Long Term Support, meaning that the software or service on LTS is intended to be continued and updated, fixed and improved upon over the period of time they are in existence.
+Stable - The current public mainstream working version of a software or service that is generally considered to be mostly bug free.
+Alpha - Very premilinary stages of development, where much functionality is not complete and only specific elm
+
+
+
+Q14: At a generalised level, how is open source software usually managed? What is an RFC?
+Q15: What is a Unix socket and why can't multiple applications listen on the same port? Does this also apply to Windows?
+Q16: What is a reverse proxy and how can it be used to allow multiple applications to listen on a single port?
+Q17: What is NGINX and why is it considered preferable to Apache?
+Q18: What is a page file? What happens to applications that exhaust all available system memory? Is 'paging' bad?
+Q19: Why is dynamic memory, also known as memory ballooning, a useful technology for virtual machines?
+Q20: What are processes? Can they share memory?
+Q21: What are threads? Can they share memory?
+Q22: What is CPU IPC and frequency? Why is CPU speed more important for single threaded applications than multi-threaded applications?
+Q23: What is the difference between concurrent and parallel execution? What does 'thread safety' mean?
+Q24: If a CPU has 4 cores, how many processes can it execute concurrently?
+Q25: Explain the difference between synchronous and asynchronous code. When would you prefer one technique over the other?
+Q26: Can a linux web-server operate acceptably with 1CPU and 512MB RAM? Can a Windows server do the same?
+Q27: Is it bad for an operating system to have assigned all its available memory? When might this occur and why can it be beneficial to performance rather than detrimental?
+Q28: What are the operational pros/cons of using a Linux server vs a Windows server?
+Q29: What are the financial implications of using open source software vs propriety software? (Specifically regarding operating system and database choice)
+Q30: Why would you want to avoid vendor lock-in at an operational level?
+Q31: What is PCIE and NVME? What are storage IOPS? Explain the pros and cons of using NVME SSD's for production servers.
+Q32: Explain the typical difference between standard type and archive type cloud storage? What technology is typically used for archival storage? What are the pros/cons for utilising archival storage?
