@@ -1,0 +1,52 @@
+Q1: Why is password authentication inferior to public key authentication?
+
+Because Key based authentication is computer generated, rather than human generated, and typically 4096 Bits in length
+less prone to being brute forced, acquired by subterfuge or guessed than a traditional password. 
+
+Communications between two system using a key pair method is only possible to decrypted by owners of the key pair.
+Furthermore a private key can typically be further encrypted with a standard password to increase safety.
+
+Q2: Why is VSCode a good choice for a text editor and how does it differ from a fully-fledged IDE?
+
+Visual Studio and other IDEs are intended as entire application or project construction platforms, whereas VSCode is a
+more of a build and debug text editor. It lacks some functionality that VS has however it is fast, and well designed 
+for cloud applications.
+
+Q3: What is SCP over SSH and why is using VSCode remote SSH convenient for managing remote instances?
+
+Secure Copy Protocol is a file transfer method that uses the Secure Shell protocol. particularly useful when performing client to remote or remote to remote file transfers.
+Using VSCode gives you the added functionality of behaving like a GUI, to navigate through files and edit code on the remote instance.
+
+SCP is considered an outdated connection method since overshadowed by Rsync and SFTP.
+
+Q4: What is a git repository? What happens during a git clone? What do the terms 'remote' and 'origin' mean in this context?
+
+A git repository is a essentially a version control system that allows multiple developers to work simultaneously on source code and effectively allows for updates, merging, compare and other similar functions like cloning and forking to provide
+developers with the tools they need to work collaboratively. 
+
+Cloning simply copies the repository from its remote source to a location locally. Becoming standalone in the process and disconnected from the source content.
+
+The remote in this instance is the location that is a copy of the original branch, whereas the origin is the centralsied point from which the most up to date version of a project would be distributed from.
+
+Q5: What is the benefit of forking a repository and submitting pull requests vs sharing repository access and pushing directly to master?
+
+I believe this is because its far safer for you to have your own copy, with which you can experiment freely with, and risk nothing other than your copy, then when you are satisfied that your work does not break anything or fail.
+You can submit a pull request for the original author to view the changes before integrating them with the original source code. Protecting the project from potential errors.
+
+Sharing repository access and pushing directly to the master could result in unforseen changes, potential for multiple changes from different users to conflict, and other such erroneous behaviour.
+
+Q6: Why are git branches useful? how would you organise a repository to best use branches?
+
+Branches are useful because it allows you to move the head and thus pointer to different instances of the work you are doing, enabling you to seperate out paths of changes, whether thats fixing mulitple seperate issues. Or coming up
+with multiple solutions for the same problem, branching these allows you to pick and choose between them and merge the ones that are useful, and merge changes with the master branch.
+
+To organise them I would simply create a branch for each change you wish to make, roughly speaking, so if you were to make a change to the code to solve a particular bug or functionality requirement then you would title that branch accordingly.
+
+Allowing you to compare and merge those changes individually and check for issues that may arise or errors that are made before combining them into the master branch.
+
+Q7: Why is it important to frequently commit and push your changes to a remote repository (eg your forked repo on GitHub)?
+
+Frequent commit and push will safeguard your work against loss of data if the original is somehow compromised, as well as ensuring that with smaller consistent changes, anything that causes
+a problem elsewhere or breaks something is easily identifiable, committing a lot of work at once increases the chance of a conflict with code that is submitted and will make it harder to
+troubleshoot an error should one arise.
+
