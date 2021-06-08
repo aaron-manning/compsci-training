@@ -81,13 +81,30 @@ Q13: Explain these software terms: LTS, Stable, Alpha, Beta, RC
 
 LTS - Long Term Support, meaning that the software or service on LTS is intended to be continued and updated, fixed and improved upon over the period of time they are in existence.
 Stable - The current public mainstream working version of a software or service that is generally considered to be mostly bug free.
-Alpha - Very premilinary stages of development, where much functionality is not complete and only specific elm
-
-
+Alpha - Very premilinary stages of development, where much functionality is not complete and only specific elements are visible for design or testing.
+Beta - Later stage development cycle where software is ready to exposed to UAT and further testing.
+RC - Release Candidate, the version of software almost out of beta ready to go live.
 
 Q14: At a generalised level, how is open source software usually managed? What is an RFC?
+
+Open Source software is primarily managed by accepting or denying edits made by the public to the source code that may add functionality, improve existing functionality
+or solve bugs, security issues and other discernable software problems. RFC is Request for Comments, whereby the IOIC opens a communication protocol to scrutiny by the general public.
+
 Q15: What is a Unix socket and why can't multiple applications listen on the same port? Does this also apply to Windows?
+
+A unix socket is a single access point or buffer where bytes are stored and retrieved by listening processes, multiple processes cannot listen to a single socket because of the inherent
+performance hit of doing this, the potential for data corruption accessing the bytes from the buffer, the fact the buffer would have to store bytes until both or all listening processes had 
+acquired the bytes and not to mention the security risks, further hampered by the potential for 2 or more communicating processes at either end resulting in much more information being necessary
+to properly get data into those apps.
+
+In windows you dont have access to the raw socket, its wrapped with windows parameters which behaves like a homogenizer for data communications but is restrictive in the communication
+elements you can access and control. It can provide lower level, but it means that higher level languages and programs cannot access that information as it has to access it through the 
+"windows communicator" to the raw data.
+
 Q16: What is a reverse proxy and how can it be used to allow multiple applications to listen on a single port?
+
+
+
 Q17: What is NGINX and why is it considered preferable to Apache?
 Q18: What is a page file? What happens to applications that exhaust all available system memory? Is 'paging' bad?
 Q19: Why is dynamic memory, also known as memory ballooning, a useful technology for virtual machines?
