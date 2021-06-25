@@ -1,0 +1,231 @@
+Q1: Why is password authentication inferior to public key authentication?
+
+Because Key based authentication is computer generated, rather than human generated, and typically 4096 Bits in length
+less prone to being brute forced, acquired by subterfuge or guessed than a traditional password. 
+
+Communications between two system using a key pair method is only possible to decrypted by owners of the key pair.
+Furthermore a private key can typically be further encrypted with a standard password to increase safety.
+
+Q2: Why is VSCode a good choice for a text editor and how does it differ from a fully-fledged IDE?
+
+Visual Studio and other IDEs are intended as entire application or project construction platforms, whereas VSCode is a
+more of a build and debug text editor. It lacks some functionality that VS has however it is fast, and well designed 
+for cloud applications.
+
+Q3: What is SCP over SSH and why is using VSCode remote SSH convenient for managing remote instances?
+
+Secure Copy Protocol is a file transfer method that uses the Secure Shell protocol. particularly useful when performing client to remote or remote to remote file transfers.
+Using VSCode gives you the added functionality of behaving like a GUI, to navigate through files and edit code on the remote instance.
+
+SCP is considered an outdated connection method since overshadowed by Rsync and SFTP.
+
+Q4: What is a git repository? What happens during a git clone? What do the terms 'remote' and 'origin' mean in this context?
+
+A git repository is a essentially a version control system that allows multiple developers to work simultaneously on source code and effectively allows for updates, merging, compare and other similar functions like cloning and forking to provide
+developers with the tools they need to work collaboratively. 
+
+Cloning simply copies the repository from its remote source to a location locally. Becoming standalone in the process and disconnected from the source content.
+
+The remote in this instance is the location that is a copy of the original branch, whereas the origin is the centralsied point from which the most up to date version of a project would be distributed from.
+
+Q5: What is the benefit of forking a repository and submitting pull requests vs sharing repository access and pushing directly to master?
+
+I believe this is because its far safer for you to have your own copy, with which you can experiment freely with, and risk nothing other than your copy, then when you are satisfied that your work does not break anything or fail.
+You can submit a pull request for the original author to view the changes before integrating them with the original source code. Protecting the project from potential errors.
+
+Sharing repository access and pushing directly to the master could result in unforseen changes, potential for multiple changes from different users to conflict, and other such erroneous behaviour.
+
+Q6: Why are git branches useful? how would you organise a repository to best use branches?
+
+Branches are useful because it allows you to move the head and thus pointer to different instances of the work you are doing, enabling you to seperate out paths of changes, whether thats fixing mulitple seperate issues. Or coming up
+with multiple solutions for the same problem, branching these allows you to pick and choose between them and merge the ones that are useful, and merge changes with the master branch.
+
+To organise them I would simply create a branch for each change you wish to make, roughly speaking, so if you were to make a change to the code to solve a particular bug or functionality requirement then you would title that branch accordingly.
+
+Allowing you to compare and merge those changes individually and check for issues that may arise or errors that are made before combining them into the master branch.
+
+Q7: Why is it important to frequently commit and push your changes to a remote repository (eg your forked repo on GitHub)?
+
+Frequent commit and push will safeguard your work against loss of data if the original is somehow compromised, as well as ensuring that with smaller consistent changes, anything that causes
+a problem elsewhere or breaks something is easily identifiable, committing a lot of work at once increases the chance of a conflict with code that is submitted and will make it harder to
+troubleshoot an error should one arise.
+
+Q8: Why are VM snapshots important?
+
+VM Snapshots when done regularly will allow you to restore a VM to a state much closer to that which it was before an error or failure occurs, saving lots of time and effort in lost work
+Ultimately saving the state of the machine like this is similar to regularly saving your work, if it goes down and you have to restore it, you will have lost less if you snapshot regularly
+restoring it to a state before it experienced a problem.
+
+Q9: When and why would you choose to use incremental backups vs full backups? 
+
+Incremental backups are especially useful when backing up large amounts of data or data that changes infrequently, by having the backup only transfer that which has changed since the
+previous backup, you can save a lot of network traffic, data transfer costs.
+
+Q10: What port is SSH usually exposed on? What are the security implications of having this port exposed to the internet? Is it worthwhile changing the port?
+
+SSH is exposed on port 22 by default, the security implications are that an attacker would know where to look for the port making a connection atttempt, changing the port would likely make
+the default operation of a lot of programs function incorrectly without additional configuration, such as any SSH connection would need to be told explicitly which port is listening for the SSH commands.
+
+I would guess a determined attacker would scan all ports on a location for the port that responds to an SSH request if thats what they were looking for and perhaps the obfuscation of the SSH port would Ultimately
+prove pointless because of this? Ultimately you might end up with less risk because bots set to attempt port 22 would miss it but ultimately if its configured correctly such an attack would be futile.
+
+Q11: What could happen if your SSH key is compromised?
+
+If your private SSH key is compromised, then forward secrecy should only allow that existing session to be compromised, and may allow someone to access the server, but not the remote.
+
+Q12: What are the security implications of using software that is no longer supported or has not been updated?
+
+New threats that are discovered and detected wont get patched for software that is unsupported or not been updated, making potentially fatal holes and exposing your system.
+
+Q13: Explain these software terms: LTS, Stable, Alpha, Beta, RC
+
+LTS - Long Term Support, meaning that the software or service on LTS is intended to be continued and updated, fixed and improved upon over the period of time they are in existence.
+Stable - The current public mainstream working version of a software or service that is generally considered to be mostly bug free.
+Alpha - Very premilinary stages of development, where much functionality is not complete and only specific elements are visible for design or testing.
+Beta - Later stage development cycle where software is ready to exposed to UAT and further testing.
+RC - Release Candidate, the version of software almost out of beta ready to go live.
+
+Q14: At a generalised level, how is open source software usually managed? What is an RFC?
+
+Open Source software is primarily managed by accepting or denying edits made by the public to the source code that may add functionality, improve existing functionality
+or solve bugs, security issues and other discernable software problems. RFC is Request for Comments, whereby the IOIC opens a communication protocol to scrutiny by the general public.
+
+Q15: What is a Unix socket and why can't multiple applications listen on the same port? Does this also apply to Windows?
+
+A unix socket is a single access point or buffer where bytes are stored and retrieved by listening processes, multiple processes cannot listen to a single socket because of the inherent
+performance hit of doing this, the potential for data corruption accessing the bytes from the buffer, the fact the buffer would have to store bytes until both or all listening processes had 
+acquired the bytes and not to mention the security risks, further hampered by the potential for 2 or more communicating processes at either end resulting in much more information being necessary
+to properly get data into those apps.
+
+In windows you dont have access to the raw socket, its wrapped with windows parameters which behaves like a homogenizer for data communications but is restrictive in the communication
+elements you can access and control. It can provide lower level, but it means that higher level languages and programs cannot access that information as it has to access it through the 
+"windows communicator" to the raw data.
+
+Q16: What is a reverse proxy and how can it be used to allow multiple applications to listen on a single port?
+
+Reverse proxy is a type of proxy server, designed to help load balance alongside other methods.
+
+The primary difference between a load balancer and a reverse proxy is that typically load balancers are useful for when you have multiple working servers.
+Where each server has to perform different tasks or if a single servers capacity is insufficient and workload needs to be handled between them.
+
+because there are multiple network adapters in play you could feasibly have an application listen to the same port on multiple ip locations.
+
+Q17: What is NGINX and why is it considered preferable to Apache?
+
+NGINX is a high performance load balancer and reverse proxy service. 
+The reason the architecture used in NGINX is considered better than Apache is because of the old mod_php module in Apache that would embed a php interpreter for every single process,
+even when the information being served was not PHP. Also, the way in which Apache creates a new process for every connection, severely limiting its ability to multithread and use multiple cores
+making a large number of processes become quickly an expensive activity.
+
+Whereas Nginx uses asynchronous, non-blocking, event driving architecture, allowing for a far more optimal handling of processes, ideally with one process per core, and every thread a subset thereafter.
+
+Q18: What is a page file? What happens to applications that exhaust all available system memory? Is 'paging' bad?
+
+Page files are like caches in that they store data that RAM hasnt used in a while, as a single contiguous chunk of data, so it can be read faster from the HD than from its original location.
+Applications that exhaust all system memory are probably experiencing a leak of some kind, as memory that is no longer required should be shadow dumped and that memory freed up. If however this does happen.
+Usually the program, or the system itself with entirely freeze up and crash, as critical processes are unable to find memory to function correctly.
+
+Paging isnt bad inherently, but poor paging management can be a crutch to a poor design, and when that crutch eventually fails, it will collapse everything.
+
+Q19: Why is dynamic memory, also known as memory ballooning, a useful technology for virtual machines?
+
+For virtual machines, having dynamic memory is important and useful because if a single VM is using less memory than another, memory can be re-allocated or reclaimed to be used by the other vM instances.
+This is particularly useful because it can lower costs than statically ensuring you have enough memory for max output of each VM individualy. but also if you are hosting a set of VMs
+Where the contiguous user or vm usage fluctuates, you can have a smaller stack of memory that can cycle between VMs if the overall max output of all VMs is not higher than the maximum memory available.
+
+Q20: What are processes? Can they share memory?
+
+Processes are instances of programs executing on a core, made up a single thread or multiple threads, there are many forms of IPC (Inter Process Communication) and one of them 
+is the use of shared memory segments, whereby mulitple processes can access the same memory segment. In Unix this is called anonymous shared memory. whereas windows has a native shared memory function.
+Multiple processes cannot share main memory space however, and the creation of share memory segments is a relatively resource expensive task, and should only be used if it would create a larger benefit.
+
+Q21: What are threads? Can they share memory?
+
+Threads are the lighter brother of a process, they are single streams of code execution occuring within the heap, a single thread process will have just one, a multi thread process will obviously have many.
+Each thread has its own stack, but share the heap for the process entire, meaning there is inherently some shared nature of memory within the heap, but the stack itself is isolated.
+
+Q22: What is CPU IPC and frequency? Why is CPU speed more important for single threaded applications than multi-threaded applications?
+
+Instructions per clock or cycle. CPU speed is more important for a single threaded application because that application will only be functioning on a single core, as a result the speed of that core
+will dictate the speed of that program. With multithreaded applications, each thread can be split between cores in a type of load balancing, making the overall impact of core speed less for that application.
+
+Q23: What is the difference between concurrent and parallel execution? What does 'thread safety' mean?
+
+Concurrent execution is when multiple processes are being worked upon at the same time, but not executed at the same time, whereas parallel execution is where 2 or more processes are being executed simultaneously.
+An application can be any number of the above, i.e. concurrent but not parallel, parallel but not concurrent, neither and both. Thread safety applies specifically to multi threaded code. 
+
+Thread safety is about ensuring that data structure manipulated by multiple threads affect the data in the intended way, without causing unexpected changes or damage as a result of multiple entry points to the data structure.
+Typically these are done by implementing race conditions, however you can achieve thread safety without race conditions by implementing, Re-Entrancy, thread-local storage, immutable objects, mutual exclusion and atomic operations.
+
+Q24: If a CPU has 4 cores, how many processes can it execute concurrently?
+
+A CPU with 4 cores can run as many processes "Concurrently" as it has memory to store the not currently executing processes.
+
+Q25: Explain the difference between synchronous and asynchronous code. When would you prefer one technique over the other?
+
+Synchronous code has to be sequentially completed before the next set of instructions can be processed, asynchronous code allow an instruction set to be hung and another started and then returned back to the previous and so on.
+
+You would use asynchronous techniques where you can run two tasks simultaneously, usually when they do not share dependencies and are independant, and you would use synchronous techniques, when you need a task to complete before proceeding.
+
+Q26: Can a linux web-server operate acceptably with 1CPU and 512MB RAM? Can a Windows server do the same?
+
+Although Linux can run on very little RAM as little as 8MB, the act of serving as a webserver typically requires as much as 2GB RAM to functional minimally, depending of course of the load.
+The same is true of windows, except that the native cost of running windows is higher than linux and typically requires as much as 512MB of RAM to function at all.
+
+Q27: Is it bad for an operating system to have assigned all its available memory? When might this occur and why can it be beneficial to performance rather than detrimental?
+
+If an operating system assigns all of its avialable memory then there is no memory remaining for additional processes, namely memory required for memory allocation processes like dynamic memory allocation.
+Things like garbage collection of memory will also look to use memory to function and if there is no memory to assign then it would crash. 
+
+I can find no example of any instance where performance would be in any way shape or form increased by having all memory assigned. almost all memory allocation methods seem to require space to function correctly.
+
+Q28: What are the operational pros/cons of using a Linux server vs a Windows server?
+
+Linux 
+Pros:
+Greater freedom to access and configure the core components of the system, but require the knowledge to do so.
+Easier for multiple ops to work with simultaneously.
+fewer security issues
+less hardware demanding
+better remote function for remote admin
+source code available
+
+Cons:
+Complex to operate
+Fewer ports available for software
+many proffessional programs do not have linux variants
+
+Windows
+Pros:
+Readily available drivers
+heavily supported by third party applications
+Simpler to use
+well documented
+
+Cons:
+frequent security issues
+resource intensive
+terminal needs to be installed for remote
+
+
+Q29: What are the financial implications of using open source software vs propriety software? (Specifically regarding operating system and database choice)
+
+Typically speaking proprietary software has some heavy licensing costs involved, and generally speaking open source, like linxu is free licensing.
+
+Q30: Why would you want to avoid vendor lock-in at an operational level?
+
+Because once your data is setup and stored in a particular proprietary format, you may find it extremely difficult to move, expand , use other services, communicate with other systems.
+This severely inhibits your freedom for expansion, scalability and diversifying operations if you are forced to used the vendor provided services to achieve the end goals.
+
+Q31: What is PCIE and NVME? What are storage IOPS? Explain the pros and cons of using NVME SSD's for production servers.
+
+PCIE is the Peripheral component interconnect express, an interface standard for components.
+NVME is Non volatime memory (express), which is an interface specification for accessing memory.
+
+Production servers may find that NVME is better for performance, but costlier, and depending on the frequency of read/write operations, potentially the life expectancy could be less.
+
+Q32: Explain the typical difference between standard type and archive type cloud storage? What technology is typically used for archival storage? What are the pros/cons for utilising archival storage?
+
+Standard Type, or "Hot" data is usually only stored for shorter periods of time, for quickly iterating through data and then storing the response, typically as Archive type data, where that information is likely to be accessed far less, i.e. once a year.
+
+Pros for archival storage include, reduced overheads, reduced hardware cost, and freeing up of space for more regularly used data. Cons include time to retrieve or operate on that data, if required, aswell as the risk of a single point of failure if configured incorrectly.
